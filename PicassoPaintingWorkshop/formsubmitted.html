@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .letter {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            position: absolute;
+            clip-path: polygon(50% 15%, 85% 50%, 50% 85%, 15% 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Create the letters
+        createLetter("I", "10vw", "50vh", 1000);
+        createLetter("love", "40vw", "50vh", 2000);
+        createLetter("you", "70vw", "50vh", 3000);
+
+        // Redirect to home page after the animation completes
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 4000); // Wait for 4 seconds before redirecting (4000 milliseconds)
+
+        function createLetter(text, left, top, delay) {
+            const letter = document.createElement("div");
+            letter.className = "letter";
+            letter.style.left = left;
+            letter.style.top = top;
+            letter.textContent = text;
+            document.body.appendChild(letter);
+
+            // Animate the letters back together
+            setTimeout(function() {
+                letter.style.opacity = 1;
+                letter.style.transform = "translate(-50%, -50%)";
+            }, delay);
+        }
+    </script>
+</body>
+
+</html>

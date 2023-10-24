@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artwork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Letters styles */
+.letter {
+    width: 60px;
+    height: 80px;
+    margin: 5px;
+    position: relative;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* ... (other styles remain unchanged) ... */
+
+/* Heart shape */
+.heart {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid #e74c3c;
+    position: relative;
+    top: -30px;
+}
+
+/* Additional styles for responsiveness */
+/* ... (other media queries remain unchanged) ... */
