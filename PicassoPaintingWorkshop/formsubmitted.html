@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Submitted</title>
+    <title>Thank You for Your Interest</title>
     <style>
         body {
             margin: 0;
@@ -40,20 +40,30 @@
                 opacity: 1;
             }
         }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <script>
-        // Create the letters
-        createLetter("I", "10vw", "50vh", 1000);
-        createLetter("love", "40vw", "50vh", 2000);
-        createLetter("you", "70vw", "50vh", 3000);
+    <div class="letter">I<br>love<br>you</div>
 
-        // Redirect to home page after the animation completes
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 4000); // Wait for 4 seconds before redirecting (4000 milliseconds)
+    <script>
+        // Animate the letters
+        animateLetters();
+
+        function animateLetters() {
+            createLetter("I", "50%", "50%", 1000);
+            createLetter("love", "50%", "50%", 2000);
+            createLetter("you", "50%", "50%", 3000);
+        }
 
         function createLetter(text, left, top, delay) {
             const letter = document.createElement("div");
@@ -69,6 +79,11 @@
                 letter.style.transform = "translate(-50%, -50%)";
             }, delay);
         }
+
+        // Redirect to thank you page after the animation completes
+        setTimeout(function() {
+            window.location.href = "thankyou.html";
+        }, 4000); // Wait for 4 seconds before redirecting (4000 milliseconds)
     </script>
 </body>
 

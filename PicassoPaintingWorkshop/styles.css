@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f5f5f5;
 }
 
@@ -31,9 +31,8 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    z-index: 1; /* Advanced Selectors and Z-Index */
 }
-
-/* ... (other styles remain unchanged) ... */
 
 /* Heart shape */
 .heart {
@@ -44,6 +43,20 @@ body {
     border-bottom: 100px solid #e74c3c;
     position: relative;
     top: -30px;
+}
+
+/* Form and input styles */
+.interest-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Shorthand Properties for form elements */
+.letter, input, label {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 /* Additional styles for responsiveness */
